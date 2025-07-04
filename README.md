@@ -31,4 +31,27 @@ inventory_perfect.csv อยู่ในช่วง IQR และ inventory_out
 ทำการ groupby เวลา inbound กับ NET_QUANTITY_MT และ ทำให้เป็นหน่วยกิโล
 คืนไฟล์ inbound_group.csv และหาวันหยุด คืนไฟล์ 'outbound_mat_holiday_byweek.csv'
 
-5.outbound_mat_holiday_byweek.csv นี่คือไฟล์ที่จะนำไปทำ ML ต่อ
+##การทำ ML 
+1.Predict_STOCK_SELL_VALUE.ipynb ทำการ อ่านไฟล์ inventory_outlier.csv
+สร้าง feature dolla , ทำ One hot encoding ,แบ่งข้อมูล 80 / 20
+ใช้ model DecisionTreeRegressor , RandomForestRegressor , GradientBoostingRegressor
+เพื่อเปรียบเทียบอันไหนดีที่สุด โดยภาพรวมคือ Random Forest Regressor
+
+2.Forecasting_Hoilday_Impact.ipynb ทำการ อ่านไฟล์ outbound_mat_holiday_byweek.csv
+ใช้ model SGDClassifier RandomForestClassifier
+ซึ่่งผลที่ได้ค่อนข้างไม่เป็นไปตามที่หวัง จึงสร้าง feature เพิ่มเติม
+จนผลที่ได้พบว่า RandomForestClassifier ได้ผลเป็นไปตามที่คาดหวัง
+
+3.Time Seires and plot.ipynb ทำการ อ่านไฟล์ Inbound_with_SHELF_LIFE_IN_MONTH (1).csv
+
+
+
+
+
+
+
+
+
+
+
+
