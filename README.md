@@ -37,19 +37,19 @@ inventory_perfect.csv อยู่ในช่วง IQR และ inventory_out
 ใช้ model DecisionTreeRegressor , RandomForestRegressor , GradientBoostingRegressor
 เพื่อเปรียบเทียบอันไหนดีที่สุด โดยภาพรวมคือ Random Forest Regressor
 
-2.Forecasting_Hoilday_Impact.ipynb ทำการ อ่านไฟล์ outbound_mat_holiday_byweek.csv
-ใช้ model SGDClassifier RandomForestClassifier
-ซึ่่งผลที่ได้ค่อนข้างไม่เป็นไปตามที่หวัง จึงสร้าง feature เพิ่มเติม
+2.Forecasting_Hoilday_Impact_.ipynb ทำการอ่านไฟล์ outbound_mat_holiday_byweek.csv
+ทำการวิเคราะห์ feature NET_QUANTITY_MT(ตัวแปรต้น) และ IS_HOLIDAY(ตัวแปรตาม)
+ใช้ model SGDClassifier และ RandomForestClassifier ซึงผลที่ได้ไม่เป็นไปตามการคาดหวังเนื่องจาก
+ข้อมูลมีความ imbalance มากจึงต้องสร้าง featureเพิ่ม เพิ่ม 'OUTBOUND_YEAR', 'OUTBOUND_WEEK', 'TIME_WEEK',  'PLANT_NAME_SINGAPORE-WAREHOUSE', 'MODE_OF_TRANSPORT_Truck'
 จนผลที่ได้พบว่า RandomForestClassifier ได้ผลเป็นไปตามที่คาดหวัง
 
 3.Time Seires and plot.ipynb ทำการ อ่านไฟล์ Inbound_with_SHELF_LIFE_IN_MONTH (1).csv
+เป็นการ plot graph เพื่อหา insight
 
-
-
-
-
-
-
+4.Inbound & Outbound Predict ทำการ อ่านไฟล์inbound_group (2).csv และ outbound_group (2).csv
+นำ 2 ไฟล์ merge กัน 
+หาว่า feature time และ feature NET_QUANTITY_KT_x , 'NET_QUANTITY_KT_y' มีผลต่อกันมากแค่ไหน
+ผลที่ได้ มีผลต่อกันน้อยมาก
 
 
 
